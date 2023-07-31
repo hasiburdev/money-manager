@@ -1,4 +1,6 @@
+import { Header } from '@money-manager/ui';
 import styles from './page.module.scss';
+import {APIResponse, API_URL} from '@money-manager/types';
 
 export default async function Index() {
   /*
@@ -6,9 +8,14 @@ export default async function Index() {
    *
    * Note: The corresponding styles are in the ./index.scss file.
    */
+  const response = await fetch(API_URL);
+  console.log(response);
+  const data = await response.json() as APIResponse;
+  console.log(data);
   return (
     <div className={styles.page}>
       <div className="wrapper">
+        <Header />
         <div className="container">
           <div id="welcome">
             <h1>
@@ -16,7 +23,6 @@ export default async function Index() {
               Welcome web 👋
             </h1>
           </div>
-
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>
@@ -48,7 +54,6 @@ export default async function Index() {
               </svg>
             </div>
           </div>
-
           <div id="middle-content">
             <div id="learning-materials" className="rounded shadow">
               <h2>Learning materials</h2>
@@ -318,7 +323,6 @@ export default async function Index() {
               </a>
             </div>
           </div>
-
           <div id="commands" className="rounded shadow">
             <h2>Next steps</h2>
             <p>Here are some things you can do with Nx:</p>
@@ -392,7 +396,6 @@ export default async function Index() {
               </pre>
             </details>
           </div>
-
           <p id="love">
             Carefully crafted with
             <svg
@@ -409,6 +412,7 @@ export default async function Index() {
               />
             </svg>
           </p>
+          HH
         </div>
       </div>
     </div>
