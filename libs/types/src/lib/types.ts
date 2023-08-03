@@ -1,9 +1,7 @@
-// export function types(): string {
-//   return 'types';
-// }
+import { BASE_URL } from "@money-manager/config";
 
 export interface APIResponse {
   message: string;
 }
 
-export const API_URL = 'http://localhost:3333/api/message';
+export const API_URL = `${BASE_URL}/message`
