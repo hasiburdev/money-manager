@@ -1,8 +1,10 @@
 import { Header } from '@money-manager/ui';
-// import styles from './page.module.scss';
-import {APIResponse, API_URL} from '@money-manager/types';
 
-export default async function Index() {
+// import styles from './page.module.scss';
+// import {APIResponse, API_URL} from '@money-manager/types';
+import { UserButton } from '@clerk/nextjs';
+
+export default async function HomePage() {
   /*
    * Replace the elements below with your own.
    *
@@ -16,8 +18,13 @@ export default async function Index() {
     <div>
       <div className="">
         <Header />
-        
-        <div><h1 className='text-blue-500 font-bold bg-black'>Hello</h1></div>
+        <div>
+          <UserButton afterSignOutUrl="/" />
+        </div>
+
+        <div>
+          <h1 className="text-blue-500 font-bold bg-black">Hello</h1>
+        </div>
       </div>
     </div>
   );
